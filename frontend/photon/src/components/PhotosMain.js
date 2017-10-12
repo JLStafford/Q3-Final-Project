@@ -1,32 +1,76 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, ButtonGroup } from 'reactstrap';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
+
 
 class PhotosMain extends Component {
+
+  state = { activeIndex: 0 };
+
+  onExiting = () => {
+    this.animating = true;
+  }
+
+  onExited = () => {
+    this.animating = false;
+  }
+
+  next = () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === this.props.photos.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  previous = () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? this.props.photos.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  goToIndex = (newIndex) => {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  }
+
+
   render () {
-    let thePhotos = this.props.photos.map(photo => {
-      let { id, url, title, description, camera } = photo;
+
+    const { activeIndex } = this.state;
+
+    let slides = this.props.photos.map(photo => {
+      let { id, url, title, description, camera, lens } = photo;
+      console.log('id in map', id)
       return (
-        <Card key={id} >
-          <CardImg top width="25%" src={url} alt={description} />
-          <CardBody>
-            <CardTitle>{title}</CardTitle>
-            <CardSubtitle>{camera}</CardSubtitle>
-            <CardText>{description}</CardText>
-            <ButtonGroup>
-              <Button href="/photos/{id}" >More</Button>{' '}
-              <Button href="/photos/{id}/edit" >Edit</Button>
-            </ButtonGroup>
-          </CardBody>
-        </Card>
+        <CarouselItem
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={id}
+          src={url}
+          altText={description}
+        >
+          <CarouselCaption captionText={description} captionHeader={title} />
+        </CarouselItem>
       )
     })
 
     return (
-      <div>
-        {thePhotos}
-      </div>
+      <Carousel
+        activeIndex={activeIndex}
+        next={this.next}
+        previous={this.previous}
+      >
+        <CarouselIndicators items={this.props.photos} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        {slides}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+      </Carousel>
     )
   }
 }

@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('photos').insert([
         {
           id: 1,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC1314.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -20,7 +20,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2090.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 3,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2110.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -46,7 +46,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 4,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2225.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -59,7 +59,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 5,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2230.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -72,7 +72,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 6,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2240.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -85,7 +85,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 7,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2241.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -98,7 +98,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 8,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2269.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -111,7 +111,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 9,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2271.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
@@ -124,7 +124,7 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 10,
-          url: 'https://unsplash.it/200/300/?random',
+          url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2272.jpg',
           title: 'A Picture',
           description: 'a cool place',
           camera: 'Sony a7r2',
