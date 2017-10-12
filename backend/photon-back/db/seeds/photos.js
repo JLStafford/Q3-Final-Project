@@ -6,7 +6,6 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('photos').insert([
         {
-          id: 1,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC1314.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -19,7 +18,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 2,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2090.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -32,7 +30,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 3,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2110.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -45,7 +42,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 4,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2225.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -58,7 +54,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 5,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2230.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -71,7 +66,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 6,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2240.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -84,7 +78,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 7,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2241.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -97,7 +90,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 8,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2269.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -110,7 +102,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 9,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2271.jpg',
           title: 'A Picture',
           description: 'a cool place',
@@ -123,7 +114,6 @@ exports.seed = function(knex, Promise) {
           location: 'here'
         },
         {
-          id: 10,
           url: 'https://s3-us-west-1.amazonaws.com/photonphotos/_DSC2272.jpg',
           title: 'A Picture',
           description: 'a cool place',

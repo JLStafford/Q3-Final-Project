@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 
@@ -35,15 +35,20 @@ class App extends Component {
                 <NavItem>
                   <NavLink href="/photos">Photos</NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink href="/photos/new">Add</NavLink>
+                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
 
-          <Route exact path="/" component={Home} />
-          <Route exact path="/photos" component={PhotosMain} />
-          <Route exact path="/photos/:id" component={OnePhoto} />
-          <Route exact path="/photos/:id/edit" component={EditPhoto} />
-          <Route exact path="/photos/new" component={NewPhoto} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/photos" component={PhotosMain} />
+            <Route exact path="/photos/new" component={NewPhoto} />
+            <Route exact path="/photos/:id" component={OnePhoto} />
+            <Route exact path="/photos/:id/edit" component={EditPhoto} />
+          </Switch>
         </div>
       </Router>
     );

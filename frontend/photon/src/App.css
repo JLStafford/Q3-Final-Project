@@ -1,7 +1,6 @@
 .App {
   height: 100vh;
   background-color: rgb(59, 65, 71);
-  /* overflow: hidden; */
 }
 
 .navbar {
@@ -19,7 +18,7 @@ div.container {
   top: 25%;
   left: 30%;
   text-justify: left;
-  /* padding-top: 200px; */
+  padding-top: 200px;
   color: rgb(200, 201, 195);
 }
 
@@ -32,10 +31,37 @@ div.container {
   color: rgb(200, 201, 195);
 }
 
-.right-col {
-  max-inline-size:
+.right-col img {
+  max-width: calc(100vw - 294px);
+  max-height: calc(100vh - 56px);
+  display: block;
 }
 
 
+.carousel-inner {
+  position: relative;
+  height: calc(100vh - 56px);
+}
+
+.carousel-item > img {
+  max-height: calc(100vh - 55px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.carousel-caption {
+  z-index: 5;
+}
+
+label {
+  color: rgb(200, 201, 195);
+}
+
+.new-form, .edit-form {
+  margin: 25px;
+
+}
 
 

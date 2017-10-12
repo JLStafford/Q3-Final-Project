@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// Gets all shops from database
+// Gets all photos from database
 export const getAllPhotos = () => {
   return {
     type: 'GET_PHOTOS',
@@ -8,7 +8,7 @@ export const getAllPhotos = () => {
   }
 }
 
-// Add a new shop to the database
+// Add a new photo to the database
 export const addAPhoto = (photo) => {
   return {
     type: 'ADD_A_PHOTO',
@@ -16,7 +16,7 @@ export const addAPhoto = (photo) => {
   }
 }
 
-// Edit a shop in database
+// Edit a photo in database
 export const editPhoto = (id) => {
   return {
     type: 'EDIT_PHOTO',
@@ -24,10 +24,10 @@ export const editPhoto = (id) => {
   }
 }
 
-// Removes a shop from server
+// Removes a photo from server
 export const deletePhoto = (id) => {
   return {
     type: 'DELETE_PHOTO',
-    payload: axios.get(`http://localhost:9001/photos`, id)
+    payload: axios.delete(`http://localhost:9001/photos`, id)
   }
 }
