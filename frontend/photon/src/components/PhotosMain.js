@@ -39,6 +39,10 @@ class PhotosMain extends Component {
     this.setState({ activeIndex: newIndex });
   }
 
+  goToPhoto = (e) => {
+
+  }
+
 
   render () {
 
@@ -48,15 +52,16 @@ class PhotosMain extends Component {
       let { id, url, title, description, camera, lens } = photo;
       console.log('id in map', id)
       return (
-        <CarouselItem
-          onExiting={this.onExiting}
-          onExited={this.onExited}
-          key={id}
-          src={url}
-          altText={description}
-        >
-          <CarouselCaption captionText={description} captionHeader={title} />
-        </CarouselItem>
+          <CarouselItem
+            onExiting={this.onExiting}
+            onExited={this.onExited}
+            key={id}
+            src={url}
+            altText={description}
+            onClick={(e) => this.goToPhoto()}
+          >
+            <CarouselCaption captionText={description} captionHeader={title} />
+          </CarouselItem>
       )
     })
 

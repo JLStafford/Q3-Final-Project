@@ -17,17 +17,18 @@ export const addAPhoto = (photo) => {
 }
 
 // Edit a photo in database
-export const editPhoto = (id) => {
+export const editAPhoto = (id, photo) => {
   return {
     type: 'EDIT_PHOTO',
-    payload: axios.patch(`http://localhost:9001/photos/${id}`, id)
+    payload: axios.patch(`http://localhost:9001/photos/${id}/edit`, id, photo)
   }
 }
 
 // Removes a photo from server
-export const deletePhoto = (id) => {
+export const deleteAPhoto = (id) => {
+  console.log('id in action', id)
   return {
     type: 'DELETE_PHOTO',
-    payload: axios.delete(`http://localhost:9001/photos`, id)
+    payload: axios.post(`http://localhost:9001/photos/${id}/`)
   }
 }

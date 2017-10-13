@@ -27,7 +27,7 @@ router.post('/', function(req, res) {
 })
 
 // Edit a photo
-router.patch('/:id', function(req, res) {
+router.patch('/:id/edit', function(req, res) {
   knex('photos').update(req.body).where('id', req.params.id).then(function() {
     knex('photos').select().then(function(photos) {
       res.json(photos)
@@ -36,8 +36,9 @@ router.patch('/:id', function(req, res) {
 });
 
 // Remove a photo
-router.delete('/:id', function(req, res) {
-  knex('photos').del().where('id', req.params.id).then(function() {
+router.post('/:id', function(req, res) {
+  console.log('route hit', req.body)
+  knex('photos').where('id', req.params.id).del().returning("*").then(function(data) {
     knex('photos').select().then(function(photos) {
       res.json(photos)
     });

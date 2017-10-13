@@ -53,6 +53,9 @@ div.container {
 
 .carousel-caption {
   z-index: 5;
+  text-align: center;
+  margin: 50px;
+  transform: translateY(-40%);
 }
 
 label {

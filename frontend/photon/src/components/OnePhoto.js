@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button, ButtonGroup, Container, Row, Col } from 'reactstrap';
-import { editPhoto, deletePhoto } from '../actions/photos';
+import { editAPhoto, deleteAPhoto } from '../actions/photos';
 
 
 class OnePhoto extends Component {
 
   editPhoto = (id) => {
-    this.props.editPhoto(id);
+    this.props.editAPhoto(id);
     this.props.history.push('/photos');
   }
 
   deletePhoto = (id) => {
-    this.props.deletePhoto(id);
+    this.props.deleteAPhoto(id);
     this.props.history.push('/photos');
   }
 
@@ -38,7 +38,7 @@ class OnePhoto extends Component {
             <p>Location: {this.props.photo ? this.props.photo.location : null}</p>
             <ButtonGroup size="sm">
               <Button href={`/photos/${this.props.photo ? this.props.photo.id : null}/edit`}>Edit</Button>
-              <Button href="/photos/">Delete</Button>
+              <Button onClick={(e) => this.deletePhoto(this.props.match.params.id)} >Delete</Button>
             </ButtonGroup>
           </Col>
           <Col md="10" className="right-col">
@@ -59,8 +59,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    editPhoto: bindActionCreators(editPhoto, dispatch),
-    deletePhoto: bindActionCreators(deletePhoto, dispatch)
+    editAPhoto: bindActionCreators(editAPhoto, dispatch),
+    deleteAPhoto: bindActionCreators(deleteAPhoto, dispatch)
   }
 }
 
