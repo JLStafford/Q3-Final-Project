@@ -1,2 +1,2 @@
-# Q3-Final-Project
-A digital photography framework built in React
+# pHoton
+A digital photography portfolio site built in React
